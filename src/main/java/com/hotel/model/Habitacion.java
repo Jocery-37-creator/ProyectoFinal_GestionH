@@ -17,6 +17,14 @@ public class Habitacion implements Serializable {
     @Column(name = "numero_habitacion", nullable = false)
     private Integer numeroHabitacion;
 
+    @ManyToOne
+    @JoinColumn(name = "fk_id_tipo_habitacion", nullable = false)
+    private TipoHabitacion tipoHabitacion;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_id_hotel", nullable = false)
+    private Hotel hotel;
+
     @Column(name = "precio_dia")
     private Integer precioDia;
 
