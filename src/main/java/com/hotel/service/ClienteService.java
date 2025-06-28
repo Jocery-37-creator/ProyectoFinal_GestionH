@@ -11,7 +11,11 @@ import java.util.*;
 @Service
 public class ClienteService {
     @Autowired
-    private ClienteRepository repo;
+    private final ClienteRepository repo;
+
+    public ClienteService(ClienteRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Cliente> getAll() { return repo.findAll(); }
     public Optional<Cliente> getById(Integer id) { return repo.findById(id); }

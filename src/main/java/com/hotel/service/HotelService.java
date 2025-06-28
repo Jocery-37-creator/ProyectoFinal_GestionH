@@ -11,10 +11,15 @@ import java.util.*;
 public class HotelService {
 
     @Autowired
-    private HotelRepository repo;
+    private final HotelRepository repo;
+
+    public HotelService(HotelRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Hotel> getAll() { return repo.findAll(); }
     public Optional<Hotel> getById(Integer id) { return repo.findById(id); }
     public Hotel save(Hotel h) { return repo.save(h); }
     public void delete(Integer id) { repo.deleteById(id); }
+
 }

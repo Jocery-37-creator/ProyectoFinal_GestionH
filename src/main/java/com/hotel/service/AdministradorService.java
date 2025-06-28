@@ -11,7 +11,11 @@ import java.util.*;
 public class AdministradorService {
 
     @Autowired
-    private AdministradorRepository repo;
+    private final AdministradorRepository repo;
+
+    public AdministradorService(AdministradorRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Administrador> getAll() { return repo.findAll(); }
     public Optional<Administrador> getById(Integer id) { return repo.findById(id); }

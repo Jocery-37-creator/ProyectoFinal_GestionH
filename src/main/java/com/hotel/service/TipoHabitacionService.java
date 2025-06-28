@@ -11,7 +11,11 @@ import java.util.*;
 public class TipoHabitacionService {
 
     @Autowired
-    private TipoHabitacionRepository repo;
+    private final TipoHabitacionRepository repo;
+
+    public TipoHabitacionService(TipoHabitacionRepository repo) {
+        this.repo = repo;
+    }
 
     public List<TipoHabitacion> getAll() { return repo.findAll(); }
     public Optional<TipoHabitacion> getById(Integer id) { return repo.findById(id); }

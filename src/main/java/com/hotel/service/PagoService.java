@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class PagoService {
+public class  PagoService {
 
     @Autowired
     private PagoRepository repo;

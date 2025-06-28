@@ -11,7 +11,11 @@ import java.util.*;
 @Service
 public class ReservaService {
     @Autowired
-    private ReservaRepository repo;
+    private final ReservaRepository repo;
+
+    public ReservaService(ReservaRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Reserva> getAll() { return repo.findAll(); }
     public Optional<Reserva> getById(Integer id) { return repo.findById(id); }

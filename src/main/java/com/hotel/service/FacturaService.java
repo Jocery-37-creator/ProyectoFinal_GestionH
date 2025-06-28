@@ -11,7 +11,11 @@ import java.util.*;
 public class FacturaService {
 
     @Autowired
-    private FacturaRepository repo;
+    private final FacturaRepository repo;
+
+    public FacturaService(FacturaRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Factura> getAll() { return repo.findAll(); }
     public Optional<Factura> getById(Integer id) { return repo.findById(id); }

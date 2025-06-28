@@ -11,7 +11,11 @@ import java.util.*;
 @Service
 public class HabitacionService {
     @Autowired
-    private HabitacionRepository repo;
+    private final HabitacionRepository repo;
+
+    public HabitacionService(HabitacionRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Habitacion> getAll() { return repo.findAll(); }
     public Optional<Habitacion> getById(Integer id) { return repo.findById(id); }
