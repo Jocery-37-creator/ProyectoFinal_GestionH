@@ -6,6 +6,25 @@
 - Sofía Lozano Martínez - 20211020088  
 - Juan Andrés González González - 20191020153
 
+## Entidades y Rutas Base de los Controladores
+
+A continuación se listan las rutas base (URL) correspondientes a cada controlador de entidad:
+
+| Entidad              | URL Base del Controlador         |
+|----------------------|----------------------------------|
+| Administrador        | `/administradores`              |
+| Reserva              | `/reservas`                     |
+| Cliente              | `/clientes`                     |
+| Empleado             | `/empleado`                     |
+| Factura              | `/facturas`                     |
+| Habitación           | `/habitaciones`                 |
+| Hotel                | `/hoteles`                      |
+| Pago                 | `/pagos`                        |
+| Tipo de Habitación   | `/tipos-habitacion`             |
+| Usuario              | `/usuario`                      |
+
+Cada uno de estos endpoints es manejado por su respectivo controlador dentro del paquete de controladores de la aplicación.
+
 
 # Endpoints
 
