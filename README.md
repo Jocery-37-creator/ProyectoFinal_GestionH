@@ -7,7 +7,7 @@
 - Juan Andrés González González - 20191020153
 
 
-# ENDPOINTS
+# Endpoints
 
 ## 📚 Endpoints - Cliente
 
@@ -100,6 +100,194 @@
 - **Método:** DELETE  
 - **URL:** `/clientes/{id}`  
 - **Descripción:** Elimina el cliente con el ID especificado.  
+- **Respuesta:** `204 No Content` si se elimina correctamente.
+
+---
+
+## 📚 Endpoints - Administrador
+
+### ➤ Listar todos los administradores
+
+- **Método:** GET  
+- **URL:** `/administradores`  
+- **Descripción:** Devuelve la lista de todos los administradores registrados.  
+- **Ejemplo de respuesta:**
+
+```json
+[
+  {
+    "idAdministrador": 1,
+    ...
+  },
+  {
+    "idAdministrador": 2,
+    ...
+  }
+]
+```
+
+---
+
+### ➤ Obtener administrador por ID
+
+- **Método:** GET  
+- **URL:** `/administradores/{id}`  
+- **Descripción:** Devuelve el administrador con el ID especificado.  
+- **Ejemplo de respuesta:**
+
+```json
+{
+  "idAdministrador": 1,
+  "primerNombre": "Juan",
+  "segundoNombre": "Carlos",
+  "primerApellido": "Pérez",
+  "segundoApellido": "Gómez",
+  "correo": "juan.perez@hotel.com",
+  "telefono": "1234567890"
+}
+```
+
+---
+
+### ➤ Crear un nuevo administrador
+
+- **Método:** POST  
+- **URL:** `/administradores`  
+- **Descripción:** Registra un nuevo administrador.  
+- **Ejemplo de request body:**
+
+```json
+{
+  "idAdministrador": 2,
+  "primerNombre": "Ana",
+  "segundoNombre": "María",
+  "primerApellido": "Ramírez",
+  "segundoApellido": "López",
+  "correo": "ana.ramirez@hotel.com",
+  "telefono": "0987654321"
+}
+```
+
+---
+
+### ➤ Actualizar un administrador
+
+- **Método:** PUT  
+- **URL:** `/administradores/{id}`  
+- **Descripción:** Actualiza la información de un administrador existente.  
+- **Ejemplo de request body:**
+
+```json
+{
+  "primerNombre": "Ana",
+  "segundoNombre": "María",
+  "primerApellido": "Ramírez",
+  "segundoApellido": "López",
+  "correo": "ana.ramirez@hotel.com",
+  "telefono": "0987654321"
+}
+```
+
+---
+
+### ➤ Eliminar un administrador
+
+- **Método:** DELETE  
+- **URL:** `/administradores/{id}`  
+- **Descripción:** Elimina el administrador con el ID especificado.  
+- **Respuesta:** `204 No Content` si se elimina correctamente.
+
+---
+
+## 📚 Endpoints - TipoHabitacion
+
+### ➤ Listar todos los tipos de habitación
+
+- **Método:** GET  
+- **URL:** `/tipos-habitacion`  
+- **Descripción:** Devuelve la lista de todos los tipos de habitación registrados.  
+- **Ejemplo de respuesta:**
+
+```json
+[
+  {
+    "idTipoHabitacion": 1,
+    ...
+  },
+  {
+    "idTipoHabitacion": 2,
+    ...
+  }
+]
+```
+
+---
+
+### ➤ Obtener tipo de habitación por ID
+
+- **Método:** GET  
+- **URL:** `/tipos-habitacion/{id}`  
+- **Descripción:** Devuelve el tipo de habitación con el ID especificado.  
+- **Ejemplo de respuesta:**
+
+```json
+{
+  "idTipoHabitacion": 1,
+  "hotel": {
+    "idHotel": 1,
+    ...
+  },
+  "nombre": "Suite",
+  "cantidad": 10
+}
+```
+
+---
+
+### ➤ Crear un nuevo tipo de habitación
+
+- **Método:** POST  
+- **URL:** `/tipos-habitacion`  
+- **Descripción:** Registra un nuevo tipo de habitación.  
+- **Ejemplo de request body:**
+
+```json
+{
+  "idTipoHabitacion": 2,
+  "hotel": {
+    "idHotel": 1
+  },
+  "nombre": "Habitación Doble",
+  "cantidad": 20
+}
+```
+
+---
+
+### ➤ Actualizar un tipo de habitación
+
+- **Método:** PUT  
+- **URL:** `/tipos-habitacion/{id}`  
+- **Descripción:** Actualiza la información de un tipo de habitación existente.  
+- **Ejemplo de request body:**
+
+```json
+{
+  "hotel": {
+    "idHotel": 1
+  },
+  "nombre": "Habitación Doble",
+  "cantidad": 25
+}
+```
+
+---
+
+### ➤ Eliminar un tipo de habitación
+
+- **Método:** DELETE  
+- **URL:** `/tipos-habitacion/{id}`  
+- **Descripción:** Elimina el tipo de habitación con el ID especificado.  
 - **Respuesta:** `204 No Content` si se elimina correctamente.
 
 ---
