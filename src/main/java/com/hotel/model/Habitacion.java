@@ -3,11 +3,13 @@ package com.hotel.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Habitacion {
+public class Habitacion implements Serializable {
     @Id
     @Column(name = "id_habitacion")
     private Integer idHabitacion;
