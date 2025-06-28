@@ -6,6 +6,8 @@
 - Sofía Lozano Martínez - 20211020088  
 - Juan Andrés González González - 20191020153
 
+Este proyecto corresponde a una aplicación backend desarrollada con **Spring Boot**, orientada a la gestión de un sistema hotelero. Contiene múltiples entidades que representan diferentes aspectos del sistema, como clientes, reservas, hoteles, facturas, entre otros.
+
 ## Entidades y Rutas Base de los Controladores
 
 A continuación se listan las rutas base (URL) correspondientes a cada controlador de entidad:
@@ -26,7 +28,7 @@ A continuación se listan las rutas base (URL) correspondientes a cada controlad
 Cada uno de estos endpoints es manejado por su respectivo controlador dentro del paquete de controladores de la aplicación.
 
 
-# Endpoints
+# Algunos Endpoints
 
 ## 📚 Endpoints - Cliente
 
