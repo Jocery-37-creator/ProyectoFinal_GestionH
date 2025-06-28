@@ -20,8 +20,8 @@ public class EmpleadoService {
     public List<Empleado> getAll() {
         return empleadoRepository.findAll();
     }
-    public Empleado getById(Integer id) {
-        return empleadoRepository.findById(id).orElse(null);
+    public Optional<Empleado> getById(Integer id) {
+        return empleadoRepository.findById(id);
     }
     public Empleado save(Empleado e) {
         return empleadoRepository.save(e);

@@ -9,6 +9,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="hotel")
 public class Hotel implements Serializable {
     @Id
     @Column(name = "id_hotel")

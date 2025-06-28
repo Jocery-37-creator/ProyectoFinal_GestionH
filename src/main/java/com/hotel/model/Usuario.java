@@ -1,12 +1,15 @@
 package com.hotel.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Usuario implements Serializable {
     @Id
     private Integer id_usuario;

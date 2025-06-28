@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -20,8 +21,8 @@ public class UsuarioService {
     public List<Usuario> getAll() {
         return usuarioRepository.findAll();
     }
-    public Usuario getById(Integer id) {
-        return usuarioRepository.findById(id).orElse(null);
+    public Optional<Usuario> getById(Integer id) {
+        return usuarioRepository.findById(id);
     }
     public Usuario save(Usuario e) {
         return usuarioRepository.save(e);
