@@ -8,18 +8,6 @@ CREATE TABLE administrador (
     telefono character varying(10) NOT NULL
 );
 
-
-CREATE TABLE administrador_general (
-    id_administrador_general integer NOT NULL,
-    correo character varying(100) NOT NULL,
-    telefono character varying(10) NOT NULL,
-    primer_nombre character varying(50) NOT NULL,
-    segundo_nombre character varying(50),
-    primer_apellido character varying(50) NOT NULL,
-    segundo_apellido character varying(50)
-);
-
-
 CREATE TABLE cliente (
     id_cliente integer NOT NULL,
     primer_nombre character varying(50) NOT NULL,
@@ -107,13 +95,8 @@ CREATE TABLE usuario (
     rol character varying(30) NOT NULL,
     fk_id_cliente integer,
     fk_id_empleado integer,
-    fk_id_administrador_general integer,
     fk_id_administrador integer
 );
-
-
-ALTER TABLE ONLY administrador_general
-    ADD CONSTRAINT administrador_general_pkey PRIMARY KEY (id_administrador_general);
 
 
 ALTER TABLE ONLY administrador
@@ -175,11 +158,6 @@ ALTER TABLE ONLY usuario
 
 ALTER TABLE ONLY usuario
     ADD CONSTRAINT fk_id_administrador FOREIGN KEY (fk_id_administrador) REFERENCES administrador(id_administrador);
-
-
-ALTER TABLE ONLY usuario
-    ADD CONSTRAINT fk_id_administrador_general FOREIGN KEY (fk_id_administrador_general) REFERENCES administrador_general(id_administrador_general);
-
 
 
 ALTER TABLE ONLY reserva

@@ -14,7 +14,6 @@ public class Hotel implements Serializable {
     @Id
     @Column(name = "id_hotel")
     private Integer idHotel;
-
     private String nombre;
     private String ciudad;
     private String telefono;

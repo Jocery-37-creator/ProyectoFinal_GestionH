@@ -3,6 +3,7 @@ package com.hotel.controller;
 
 import com.hotel.model.Cliente;
 import com.hotel.service.ClienteService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> create(@RequestBody Cliente c) {
+    public ResponseEntity<Cliente> create(@Valid @RequestBody Cliente c) {
         return ResponseEntity.ok(service.save(c));
     }
 
