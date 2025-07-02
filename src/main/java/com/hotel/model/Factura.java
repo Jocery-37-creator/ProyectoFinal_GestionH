@@ -23,7 +23,7 @@ public class Factura implements Serializable {
     private Pago pago;
 
     @Column(name = "fecha_emision")
-    private Integer fechaEmision; // Puedes cambiarlo a LocalDate si prefieres
+    private Integer fechaEmision;
 
     @Column(name = "valor_total")
     private Integer valorTotal;
