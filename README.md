@@ -1,4 +1,4 @@
-# Taller 2 - Desarrollo Web con Java Spring
+# Proyecto Final - Desarrollo Web con Java Spring
 
 **Integrantes del grupo:**
 
