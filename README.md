@@ -8,6 +8,9 @@
 
 Este proyecto corresponde a una aplicación backend desarrollada con **Spring Boot**, orientada a la gestión de un sistema hotelero. Contiene múltiples entidades que representan diferentes aspectos del sistema, como clientes, reservas, hoteles, facturas, entre otros.
 
+Se hicieron cambios en la base de datos considerando errores posibles de diseños. Los cambios se hicieron para mentener la cohesion de las entidades del problema. 
+Se eliminaron tres claves foráneas mal definidas en la tabla usuario. En su lugar, se establecieron correctamente relaciones de dependencia desde las tablas administrador, cliente y empleado hacia usuario.
+
 ## Entidades y Rutas Base de los Controladores
 
 A continuación se listan las rutas base (URL) correspondientes a cada controlador de entidad:
