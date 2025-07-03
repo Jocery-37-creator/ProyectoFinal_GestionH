@@ -1,8 +1,6 @@
 package com.hotel.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -38,5 +36,9 @@ public class Empleado implements Serializable {
     private String primer_apellido;
 
     private String segundo_apellido;
+
+    @OneToOne
+    @JoinColumn(name="fk_id_usuario")
+    private Usuario usuario;
 
 }

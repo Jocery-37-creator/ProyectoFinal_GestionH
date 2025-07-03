@@ -38,4 +38,8 @@ public class Administrador implements Serializable {
     @NotBlank(message = "Se debe digitar un telefono")
     @Column(nullable = false)
     private String telefono;
+
+    @OneToOne
+    @JoinColumn(name="fk_id_usuario")
+    private Usuario usuario;
 }

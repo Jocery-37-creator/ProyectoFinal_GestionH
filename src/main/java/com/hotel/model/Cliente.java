@@ -37,4 +37,12 @@ public class Cliente implements Serializable {
     @NotBlank(message = "La direccion es obligatoria")
     @Column(nullable = false)
     private String direccion;
+
+    @OneToOne
+    @JoinColumn(name="fk_id_usuario")
+    private Usuario usuario;
 }
+
+//DTO
+//Model
+//Entity
