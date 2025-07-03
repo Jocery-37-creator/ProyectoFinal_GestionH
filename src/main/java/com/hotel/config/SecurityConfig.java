@@ -41,6 +41,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/usuario").permitAll()
                             .requestMatchers("/clientes").permitAll()
+                            .requestMatchers("/auth/signup").permitAll()
+                            .requestMatchers("/auth/login").permitAll()
                             .anyRequest().authenticated();
                 })
                 .authenticationManager(authenticationManager)

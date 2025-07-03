@@ -16,16 +16,18 @@ import java.io.Serializable;
 @Builder
 public class Usuario implements Serializable {
     @Id
-    private Integer id_usuario;
+    @Column(name = "id_usuario")
+    private Integer idUsuario;
 
     @NotBlank(message = "Debe de tener un nombre de usuario")
     @Column(name = "nombre_usuario", nullable = false)
     private String nombreUsuario;
 
     @NotBlank(message = "La contraseña no puede estar vacia")
-    @Size(min = 5, max = 50, message = "La contraseña debe tener entre 5 y 50 caracteres")
+    @Size(min = 5, message = "La contraseña debe mas de 5 caracteres")
     @Column(nullable = false)
     private String contrasena;
+
     @NotBlank(message = "Debe de tener un rol")
     @Column(nullable = false)
     private String rol;

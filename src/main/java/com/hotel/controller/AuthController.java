@@ -1,7 +1,7 @@
 package com.hotel.controller;
 
 //import com.acm.advices.controller.dto.UserAuthDTO;
-import com.hotel.controller.DTO.UserAuthDTO;
+import com.hotel.controller.DTO.UserAuth;
 //import com.acm.advices.controller.dto.UserDTO;
 import com.hotel.model.Usuario;
 //import com.acm.advices.persistence.entity.UserEntity;
@@ -29,7 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/auth/")
+@RequestMapping("/auth/")
 @RequiredArgsConstructor
 @Validated
 public class AuthController {
@@ -38,10 +38,10 @@ public class AuthController {
     private final UsuarioService userService;
     private final PasswordEncoder passwordEncoder;
     @PostMapping("/login")
-    public ResponseEntity<Object> login(@RequestBody UserAuthDTO userAuthDTO){
+    public ResponseEntity<Object> login(@RequestBody UserAuth userAuth){
         try{
             Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(userAuthDTO.getNombreUsuario(), userAuthDTO.getContrasena())
+                    new UsernamePasswordAuthenticationToken(userAuth.getNombreUsuario(), userAuth.getContrasena())
             );
             User user = (User) authentication.getPrincipal();
             String token = jwtUtil.generateToken(user.getUsername());
@@ -56,11 +56,13 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<Object> sigUp(@Valid@RequestBody Usuario usuario){
+    public ResponseEntity<Object> sigUp(@Valid @RequestBody Usuario usuario){
         try{
             userService.save(com.hotel.model.Usuario.builder()
+                    .idUsuario(usuario.getIdUsuario())
                     .nombreUsuario(usuario.getNombreUsuario())
                     .contrasena(passwordEncoder.encode(usuario.getContrasena()))
+                    .rol(usuario.getRol())
                     .build());
             return ResponseEntity.ok("User created successfully");
         }catch (Exception e){
